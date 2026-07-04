@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Prediction Result</h1>
+
+        <h2>{{ prediction }}</h2>
+
+        <hr>
+
+        <h3>Project Details</h3>
+
+        <p><strong>Best Algorithm:</strong> Logistic Regression</p>
+
+        <p><strong>Accuracy:</strong> 100%</p>
+
+        <p><strong>Project:</strong> Supervised Machine Learning</p>
+
+        <br>
+
+        <h3>Algorithm Accuracy Comparison</h3>
+
+        <img src="{{ url_for('static', filename='accuracy_graph.png') }}" width="350">
+
+        <a href="/">⬅ Predict Again</a>
+
+    </div>
+
+</body>
+
+</html>
