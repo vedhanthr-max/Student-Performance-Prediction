@@ -28,6 +28,7 @@ A Flask web application is used to provide a simple user interface where users c
 - Scikit-learn
 - XGBoost
 - Joblib
+- gunicorn
 
 ---
 
