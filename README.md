@@ -172,12 +172,10 @@ The algorithm with the highest accuracy is automatically saved as `model.pkl`.
 ## 📸 Screenshots
 
 ### Input Form
-[![Input Form](static/screenshot_input.png)]
-(https://1drv.ms/i/c/542242d02b40ea8e/IQAiGs511qXPTJ2W785BTZW4Afbv2woNy3_4Dw2xDpkV-Ow?e=zCjnHN)
+[![Input Form](static/screenshot_input.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQAiGs511qXPTJ2W785BTZW4Afbv2woNy3_4Dw2xDpkV-Ow?e=zCjnHN)
 
 ### Prediction Result
-[![Result](static/screenshot_result.png)]
-(https://1drv.ms/i/c/542242d02b40ea8e/IQBHnur8X7NpQ6ARk5VpPW5BAWqo8bUfr1qLYJacsFj90Fs?e=JBRYgd)
+[![Result](static/screenshot_result.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQBHnur8X7NpQ6ARk5VpPW5BAWqo8bUfr1qLYJacsFj90Fs?e=JBRYgd)
 
 ### Algorithm Accuracy Comparison
 [![Accuracy Graph](static/accuracy_graph.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQCAfCOkYm_LT5QOp56f8HnrAcU15SH5ZUR8szbV6t3zKKQ?e=csUBzu)
