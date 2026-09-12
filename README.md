@@ -1,85 +1,85 @@
-# 🎓 Student Performance Prediction & Analytics System
+# 🎓 Student Performance Prediction using Supervised Machine Learning
 
-An end-to-end web application that predicts and analyzes student academic performance using Machine Learning and provides actionable insights for students and teachers.
+A Flask web application that predicts student performance using multiple supervised machine learning algorithms and compares their accuracy to identify the best-performing model.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)
-![SQLite](https://img.shields.io/badge/SQLite-3-lightgrey.svg)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.0+-orange.svg)
+![XGBoost](https://img.shields.io/badge/XGBoost-1.7+-red.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 
-## 📌 Overview
+## 📌 Project Overview
 
-This project is a **web-based analytics system** designed to help educational institutions track, analyze, and predict student performance. It uses **K-Means Clustering** to group students based on academic patterns and generates **personalized recommendations** for improvement.
+This project predicts student performance using **7 different supervised machine learning algorithms** and automatically selects the best-performing model. A **Flask web application** provides a simple user interface where users can enter student details and receive instant predictions.
 
-The system provides **role-based access** for:
-- 👨‍🎓 **Students** — View personal performance and recommendations
-- 👩‍🏫 **Teachers** — Manage student data and view class analytics
-
----
-
-## ✨ Features
-
-### 🎯 Core Features
-- ✅ Student data management (CRUD operations)
-- ✅ Performance prediction using Machine Learning
-- ✅ K-Means clustering for student grouping
-- ✅ Automated performance recommendations
-- ✅ Interactive analytics dashboard
-- ✅ Role-based access (Student / Teacher)
-
-### 📊 Analytics Parameters
-- Study hours per day
-- Attendance percentage
-- Assignment marks
-- Internal assessment marks
-- Previous academic records
-
-### 📈 Visualizations
-- Performance trend charts
-- Cluster distribution graphs
-- Subject-wise comparison
-- Attendance vs. performance correlation
+The system classifies students into three categories:
+- ❌ **Fail**
+- ✅ **Pass**
+- 🌟 **Excellent**
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Features
 
-| Layer | Technology |
-|-------|-----------|
-| **Backend** | Python, Flask |
-| **Database** | SQLite |
-| **ML/Analytics** | Scikit-learn, Pandas, NumPy |
+- ✅ Student Performance Prediction
+- ✅ Comparison of 7 Machine Learning Algorithms
+- ✅ Automatic Best Model Selection
+- ✅ Accuracy Comparison Graph
+- ✅ Flask Web Application
+- ✅ User-Friendly Interface
+- ✅ Model Persistence using Joblib
+
+---
+
+## 🛠 Technologies Used
+
+| Category | Technologies |
+|----------|-------------|
+| **Language** | Python |
+| **Web Framework** | Flask |
+| **Data Processing** | Pandas, NumPy |
 | **Visualization** | Matplotlib |
-| **Frontend** | HTML, CSS, Bootstrap |
-| **Tools** | Git, VS Code, Jupyter |
+| **Machine Learning** | Scikit-learn, XGBoost |
+| **Model Saving** | Joblib |
 
 ---
 
-## 🧠 Machine Learning Model
+## 🤖 Machine Learning Algorithms
 
-### Algorithm Used: **K-Means Clustering**
+The project trains and compares **7 different algorithms**:
 
-**Why K-Means?**
-- Groups students with similar performance patterns
-- Identifies high, medium, and low performers
-- Enables targeted interventions
+1. **Logistic Regression**
+2. **Decision Tree Classifier**
+3. **Random Forest Classifier**
+4. **K-Nearest Neighbors (KNN)**
+5. **Support Vector Machine (SVM)**
+6. **Naive Bayes (Gaussian)**
+7. **XGBoost Classifier**
 
-**Features Used:**
-- Study Hours
-- Attendance %
-- Assignment Marks
-- Internal Marks
+The algorithm with the **highest accuracy** is automatically selected and saved as `model.pkl`.
 
-**Clusters Formed:**
+---
 
-| Cluster | Description | Action |
-|---------|-------------|--------|
-| Cluster 0 | High Performers | Advanced materials |
-| Cluster 1 | Average Performers | Regular monitoring |
-| Cluster 2 | Needs Improvement | Extra support |
+## 📊 Input Parameters
+
+| Parameter | Description | Range |
+|-----------|-------------|-------|
+| **Study Hours** | Daily study hours | 1 - 10 |
+| **Attendance** | Attendance percentage | 50 - 100 |
+| **Assignment Marks** | Assignment score | 5 - 25 |
+| **Internal Marks** | Internal exam marks | 10 - 50 |
+
+---
+
+## 📈 Output Classes
+
+| Class | Label | Meaning |
+|-------|-------|---------|
+| 0 | ❌ Fail | Needs significant improvement |
+| 1 | ✅ Pass | Meets minimum requirements |
+| 2 | 🌟 Excellent | Outstanding performance |
 
 ---
 
@@ -88,155 +88,159 @@ The system provides **role-based access** for:
 ```
 Student-Performance-Prediction/
 │
-├── app.py                  # Main Flask application
-├── models/
-│   ├── ml_model.py         # K-Means clustering logic
-│   └── predictor.py        # Prediction functions
-├── database/
-│   ├── db.sqlite           # SQLite database
-│   └── schema.sql          # Database schema
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
-├── templates/
-│   ├── base.html
-│   ├── login.html
-│   ├── student_dashboard.html
-│   ├── teacher_dashboard.html
-│   └── analytics.html
-├── requirements.txt
+├── app.py                      # Flask web application
+├── main.py                     # Model training script
+├── generate_dataset.py         # Dataset generator
+├── dataset.csv                 # Training dataset (300 records)
+├── model.pkl                   # Saved best model
+├── requirements.txt            # Dependencies
 ├── README.md
-└── .gitignore
+│
+├── static/
+│   └── accuracy_graph.png      # Algorithm comparison chart
+│
+└── templates/
+    ├── index.html              # Input form
+    └── result.html             # Prediction result
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 How to Run
 
-### Prerequisites
-- Python 3.9 or higher
-- pip (Python package manager)
-- Git
+### 1. Install Libraries
 
-### Installation
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/vedhanthr-max/Student-Performance-Prediction.git
-cd Student-Performance-Prediction
-```
-
-**2. Create virtual environment**
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-```
-
-**3. Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Initialize database**
+### 2. Generate Dataset (Optional)
+
 ```bash
-python database/init_db.py
+python generate_dataset.py
 ```
 
-**5. Run the application**
+### 3. Train the Model
+
+```bash
+python main.py
+```
+
+This will:
+- Load `dataset.csv`
+- Train 7 ML algorithms
+- Compare accuracies
+- Save the best model as `model.pkl`
+- Generate `static/accuracy_graph.png`
+
+### 4. Run the Flask Application
+
 ```bash
 python app.py
 ```
 
-**6. Open in browser**
+### 5. Open in Browser
+
 ```
 http://127.0.0.1:5000
 ```
+
+Enter student details and click **Predict** to see the result.
+
+---
+
+## 🧠 How It Works
+
+### Step 1: Data Generation
+`generate_dataset.py` creates 300 synthetic student records with:
+- Study Hours (1-10)
+- Attendance (50-100)
+- Assignment Marks (5-25)
+- Internal Marks (10-50)
+
+### Step 2: Model Training
+`main.py` trains 7 different ML algorithms and compares their accuracy.
+
+### Step 3: Best Model Selection
+The algorithm with the highest accuracy is automatically saved as `model.pkl`.
+
+### Step 4: Prediction
+`app.py` loads the saved model and predicts student performance based on user input.
 
 ---
 
 ## 📸 Screenshots
 
-### Login Page
-![Login](screenshots/login.png)
+### Input Form
+[![Input Form](static/screenshot_input.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQAiGs511qXPTJ2W785BTZW4Afbv2woNy3_4Dw2xDpkV-Ow?e=zCjnHN)
 
-### Teacher Dashboard
-![Teacher Dashboard](screenshots/teacher_dashboard.png)
+### Prediction Result
+[![Result](static/screenshot_result.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQBHnur8X7NpQ6ARk5VpPW5BAWqo8bUfr1qLYJacsFj90Fs?e=JBRYgd)
 
-### Student Analytics
-![Analytics](screenshots/analytics.png)
+### Algorithm Accuracy Comparison
+[![Accuracy Graph](static/accuracy_graph.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQCAfCOkYm_LT5QOp56f8HnrAcU15SH5ZUR8szbV6t3zKKQ?e=csUBzu)
 
-### Cluster Visualization
-![Clusters](screenshots/clusters.png)
-
-> 💡 Add your actual screenshots to a `screenshots/` folder in the repo
+> 💡 Add your actual screenshots to the `static/` folder
 
 ---
 
-## 🔐 Default Credentials (for testing)
+## 📊 Accuracy Comparison
 
-| Role | Username | Password |
-|------|----------|----------|
-| Teacher | `teacher1` | `teacher123` |
-| Student | `student1` | `student123` |
+The project generates a bar chart comparing all 7 algorithms:
 
-> ⚠️ **Change these in production!**
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- KNN
+- SVM
+- Naive Bayes
+- XGBoost
 
----
-
-## 📊 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/login` | User authentication |
-| GET | `/student/dashboard` | Student dashboard |
-| GET | `/teacher/dashboard` | Teacher dashboard |
-| POST | `/student/add` | Add new student |
-| PUT | `/student/update/<id>` | Update student data |
-| DELETE | `/student/delete/<id>` | Delete student |
-| GET | `/analytics/clusters` | Get cluster data |
-| GET | `/analytics/predict/<id>` | Predict performance |
+The best-performing model is automatically saved and used for predictions.
 
 ---
 
-## 🧪 Testing
+## 🔧 Requirements
+
+```
+flask
+pandas
+numpy
+matplotlib
+scikit-learn
+xgboost
+joblib
+```
+
+Install all at once:
 
 ```bash
-# Run unit tests
-python -m pytest tests/
-
-# Run with coverage
-pytest --cov=. tests/
+pip install flask pandas numpy matplotlib scikit-learn xgboost joblib
 ```
 
 ---
 
 ## 🔮 Future Enhancements
 
-- [ ] Add more ML algorithms (Random Forest, XGBoost)
+- [ ] Add more ML algorithms (CatBoost, LightGBM)
 - [ ] Deploy on cloud (Render / Railway / Heroku)
-- [ ] Add email notifications for low performers
-- [ ] Mobile responsive improvements
-- [ ] Export reports to PDF/Excel
-- [ ] Real-time chat between teacher and student
+- [ ] Add user authentication
+- [ ] Store prediction history in database
+- [ ] Add data visualization dashboard
+- [ ] Support CSV bulk upload for predictions
+- [ ] Add model explainability (SHAP/LIME)
+- [ ] Improve UI with Bootstrap
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome!
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
+2. Create feature branch (`git checkout -b feature/NewFeature`)
+3. Commit changes (`git commit -m 'Add NewFeature'`)
+4. Push (`git push origin feature/NewFeature`)
 5. Open a Pull Request
 
 ---
@@ -262,9 +266,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## 🙏 Acknowledgments
 
 - CARE College of Engineering for academic support
-- Scikit-learn documentation
+- Scikit-learn & XGBoost documentation
 - Flask community
-- All contributors and testers
 
 ---
 
