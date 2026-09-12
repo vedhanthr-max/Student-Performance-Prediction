@@ -50,7 +50,7 @@ The system classifies students into three categories:
 
 The project trains and compares **7 different algorithms**:
 
-1. **Logistic Regression**
+1. **Logistic Regression** ← Best performer (100% accuracy)
 2. **Decision Tree Classifier**
 3. **Random Forest Classifier**
 4. **K-Nearest Neighbors (KNN)**
@@ -99,10 +99,38 @@ Student-Performance-Prediction/
 ├── static/
 │   └── accuracy_graph.png      # Algorithm comparison chart
 │
-└── templates/
-    ├── index.html              # Input form
-    └── result.html             # Prediction result
+├── templates/
+│   ├── index.html              # Input form
+│   └── result.html             # Prediction result
+│
+└── screenshots/
+    ├── input_form.png
+    ├── result.png
+    └── accuracy_graph.png
 ```
+
+---
+
+## 📸 Screenshots
+
+### 🖥️ Input Form
+![Input Form](screenshots/input_form.png)
+
+*User enters Study Hours, Attendance, Assignment Marks, and Internal Marks*
+
+---
+
+### 🎯 Prediction Result
+![Prediction Result](screenshots/result.png)
+
+*System displays prediction (Excellent 🌟) along with best algorithm and accuracy*
+
+---
+
+### 📊 Algorithm Accuracy Comparison
+![Algorithm Comparison](screenshots/accuracy_graph.png)
+
+*Bar chart comparing accuracy of all 7 machine learning algorithms*
 
 ---
 
@@ -169,34 +197,21 @@ The algorithm with the highest accuracy is automatically saved as `model.pkl`.
 
 ---
 
-## 📸 Screenshots
-
-### Input Form
-[![Input Form](static/screenshot_input.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQAiGs511qXPTJ2W785BTZW4Afbv2woNy3_4Dw2xDpkV-Ow?e=zCjnHN)
-
-### Prediction Result
-[![Result](static/screenshot_result.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQBHnur8X7NpQ6ARk5VpPW5BAWqo8bUfr1qLYJacsFj90Fs?e=JBRYgd)
-
-### Algorithm Accuracy Comparison
-[![Accuracy Graph](static/accuracy_graph.png)](https://1drv.ms/i/c/542242d02b40ea8e/IQCAfCOkYm_LT5QOp56f8HnrAcU15SH5ZUR8szbV6t3zKKQ?e=csUBzu)
-
-> 💡 Add your actual screenshots to the `static/` folder
-
----
-
 ## 📊 Accuracy Comparison
 
 The project generates a bar chart comparing all 7 algorithms:
 
-- Logistic Regression
-- Decision Tree
-- Random Forest
-- KNN
-- SVM
-- Naive Bayes
-- XGBoost
+| Algorithm | Accuracy |
+|-----------|----------|
+| Logistic Regression | 100% ⭐ |
+| Random Forest | ~95% |
+| Naive Bayes | ~93% |
+| XGBoost | ~93% |
+| Decision Tree | ~88% |
+| SVM | ~86% |
+| KNN | ~85% |
 
-The best-performing model is automatically saved and used for predictions.
+**Best Model: Logistic Regression** — automatically saved and used for predictions.
 
 ---
 
