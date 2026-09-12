@@ -68,17 +68,13 @@ The system provides **role-based access** for:
 - Enables targeted interventions
 
 **Features Used:**
-Study Hours
-
-Attendance %
-
-Assignment Marks
-
-Internal Marks
-
-text
+- Study Hours
+- Attendance %
+- Assignment Marks
+- Internal Marks
 
 **Clusters Formed:**
+
 | Cluster | Description | Action |
 |---------|-------------|--------|
 | Cluster 0 | High Performers | Advanced materials |
@@ -88,32 +84,33 @@ text
 ---
 
 ## 📂 Project Structure
+
+```
 Student-Performance-Prediction/
 │
-├── app.py # Main Flask application
+├── app.py                  # Main Flask application
 ├── models/
-│ ├── ml_model.py # K-Means clustering logic
-│ └── predictor.py # Prediction functions
+│   ├── ml_model.py         # K-Means clustering logic
+│   └── predictor.py        # Prediction functions
 ├── database/
-│ ├── db.sqlite # SQLite database
-│ └── schema.sql # Database schema
+│   ├── db.sqlite           # SQLite database
+│   └── schema.sql          # Database schema
 ├── static/
-│ ├── css/
-│ │ └── style.css
-│ ├── js/
-│ │ └── script.js
-│ └── images/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
 ├── templates/
-│ ├── base.html
-│ ├── login.html
-│ ├── student_dashboard.html
-│ ├── teacher_dashboard.html
-│ └── analytics.html
+│   ├── base.html
+│   ├── login.html
+│   ├── student_dashboard.html
+│   ├── teacher_dashboard.html
+│   └── analytics.html
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
-text
+```
 
 ---
 
@@ -130,9 +127,10 @@ text
 ```bash
 git clone https://github.com/vedhanthr-max/Student-Performance-Prediction.git
 cd Student-Performance-Prediction
-2. Create virtual environment
+```
 
-bash
+**2. Create virtual environment**
+```bash
 # Windows
 python -m venv venv
 venv\Scripts\activate
@@ -140,93 +138,140 @@ venv\Scripts\activate
 # macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
-3. Install dependencies
+```
 
-bash
+**3. Install dependencies**
+```bash
 pip install -r requirements.txt
-4. Initialize database
+```
 
-bash
+**4. Initialize database**
+```bash
 python database/init_db.py
-5. Run the application
+```
 
-bash
+**5. Run the application**
+```bash
 python app.py
-6. Open in browser
+```
 
-text
+**6. Open in browser**
+```
 http://127.0.0.1:5000
-📸 Screenshots
-Login Page
-https://screenshots/login.png
+```
 
-Teacher Dashboard
-https://screenshots/teacher_dashboard.png
+---
 
-Student Analytics
-https://screenshots/analytics.png
+## 📸 Screenshots
 
-Cluster Visualization
-https://screenshots/clusters.png
+### Login Page
+![Login](screenshots/login.png)
 
-💡 Add your actual screenshots to a screenshots/ folder in the repo
+### Teacher Dashboard
+![Teacher Dashboard](screenshots/teacher_dashboard.png)
 
-🔐 Default Credentials (for testing)
-Role	Username	Password
-Teacher	teacher1	teacher123
-Student	student1	student123
-⚠️ Change these in production!
+### Student Analytics
+![Analytics](screenshots/analytics.png)
 
-📊 API Endpoints
-Method	Endpoint	Description
-POST	/login	User authentication
-GET	/student/dashboard	Student dashboard
-GET	/teacher/dashboard	Teacher dashboard
-POST	/student/add	Add new student
-PUT	/student/update/<id>	Update student data
-DELETE	/student/delete/<id>	Delete student
-GET	/analytics/clusters	Get cluster data
-GET	/analytics/predict/<id>	Predict performance
-🧪 Testing
-bash
+### Cluster Visualization
+![Clusters](screenshots/clusters.png)
+
+> 💡 Add your actual screenshots to a `screenshots/` folder in the repo
+
+---
+
+## 🔐 Default Credentials (for testing)
+
+| Role | Username | Password |
+|------|----------|----------|
+| Teacher | `teacher1` | `teacher123` |
+| Student | `student1` | `student123` |
+
+> ⚠️ **Change these in production!**
+
+---
+
+## 📊 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/login` | User authentication |
+| GET | `/student/dashboard` | Student dashboard |
+| GET | `/teacher/dashboard` | Teacher dashboard |
+| POST | `/student/add` | Add new student |
+| PUT | `/student/update/<id>` | Update student data |
+| DELETE | `/student/delete/<id>` | Delete student |
+| GET | `/analytics/clusters` | Get cluster data |
+| GET | `/analytics/predict/<id>` | Predict performance |
+
+---
+
+## 🧪 Testing
+
+```bash
 # Run unit tests
 python -m pytest tests/
 
 # Run with coverage
 pytest --cov=. tests/
-🔮 Future Enhancements
-□ Add more ML algorithms (Random Forest, XGBoost)
-□ Deploy on cloud (Render / Railway / Heroku)
-□ Add email notifications for low performers
-□ Mobile responsive improvements
-□ Export reports to PDF/Excel
-□ Real-time chat between teacher and student
-🤝 Contributing
+```
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] Add more ML algorithms (Random Forest, XGBoost)
+- [ ] Deploy on cloud (Render / Railway / Heroku)
+- [ ] Add email notifications for low performers
+- [ ] Mobile responsive improvements
+- [ ] Export reports to PDF/Excel
+- [ ] Real-time chat between teacher and student
+
+---
+
+## 🤝 Contributing
+
 Contributions are welcome! Please follow these steps:
 
-Fork the repository
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Create a feature branch (git checkout -b feature/AmazingFeature)
+---
 
-Commit changes (git commit -m 'Add AmazingFeature')
+## 📄 License
 
-Push to branch (git push origin feature/AmazingFeature)
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-Open a Pull Request
+---
 
-📄 License
-This project is licensed under the MIT License — see the LICENSE file for details.
+## 👨‍💻 Author
 
-👨‍💻 Author
-Vedhanth R
+**Vedhanth R**
 
-🎓 B.E. Computer Science & Engineering
+- 🎓 B.E. Computer Science & Engineering
+- 🏫 CARE College of Engineering, Tiruchirappalli
+- 📧 vedhanth.r65@gmail.com
+- 🔗 [LinkedIn](https://www.linkedin.com/in/vedhanth-r-226898412)
+- 🐙 [GitHub](https://github.com/vedhanthr-max)
 
-🏫 CARE College of Engineering, Tiruchirappalli
+---
 
-📧 vedhanth.r65@gmail.com
+## 🙏 Acknowledgments
 
-🔗 LinkedIn
+- CARE College of Engineering for academic support
+- Scikit-learn documentation
+- Flask community
+- All contributors and testers
 
-🐙 GitHub
+---
 
+## ⭐ Show Your Support
+
+If this project helped you, please give it a **⭐ star** on GitHub!
+
+---
+
+**Made with ❤️ by Vedhanth R**
